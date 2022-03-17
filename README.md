@@ -1,15 +1,7 @@
-# Basic Sample Hardhat Project
+# sherlock-ctf-0x0
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+32 participants selected from Secureum bootcamp were locked in a 7-day battle to hack each other’s contracts.
 
-Try running some of the following tasks:
+The top 32 performers on the Secureum bootcamp quiz were selected to participate in a unique kind of blockchain CTF. Each participant created a contract that is possible but VERY difficult to hack. Over the course of the 7 days, each participant tried to hack as many of their fellow students' contracts as possible.
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+Each participant started with a maximum of 8 points (depending on the completeness of their submission). A participant earns 1 point for each contract they are able to hack. Extra points were awarded for creative and unintended hacks of others' contracts.
