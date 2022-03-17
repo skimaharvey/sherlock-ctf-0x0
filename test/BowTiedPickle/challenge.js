@@ -1,7 +1,7 @@
 const { ethers, upgrades, waffle } = require('hardhat');
 const { expect } = require('chai');
 
-describe('[Challenge] Climber', function () {
+describe('[Challenge] BowTiedPickle', function () {
     let deployer, attacker; 
 
     before(async function () {
@@ -15,7 +15,6 @@ describe('[Challenge] Climber', function () {
     })
 
     it("Exploit", async function() {
-        console.log(await waffle.provider.getStorageAt(this.padlock.address, 2))
         await this.padlock.pick1("\u9027616")
 
         await this.padlock.pick2({value: 33})
