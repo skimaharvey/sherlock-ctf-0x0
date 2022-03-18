@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity 0.7.3;
 import "./utils/Ownable.sol";
+import "hardhat/console.sol";
 
 /** @title Casino
  *  @dev This contract implement is a casino style game contract with an ERC20 like interface.
@@ -116,9 +117,17 @@ contract Casino is Ownable {
      * @dev Play a game and guess number.
      */
     function jackpot(uint256 num, uint256 chance) external payable {
+        console.log("before finished");
         require(!finished, "Over");
+        console.log("not over");
         require(gameOn && attemptNumber < 10, "Wait for next round");
+        console.log("inferior to 10");
         require(chance > 0 && chance < 6, "!chance");
+        console.log("change is between 1 and 6");
+        console.log(
+            "num: ",
+            chance * 1 ether + (chance * ((roundNumber - 1) * 1 ether)) / 10
+        );
         require(
             msg.value ==
                 chance *
@@ -127,6 +136,7 @@ contract Casino is Ownable {
                     10,
             "Incorrect amount"
         );
+        console.log("passed all required");
         uint256 amount = msg.value;
         totalPrize += amount;
         tickets[attemptNumber] = Ticket(msg.sender, block.timestamp, chance);
